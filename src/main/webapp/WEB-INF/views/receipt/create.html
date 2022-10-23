@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create customer</title>
+</head>
+<body>
+<h1>Create customer</h1>
+<p>
+    <a href="/receipts">Receipt list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/create}" th:object="${receiptForm}" method="post" novalidate="novalidate" enctype="multipart/form-data">
+    <table>
+
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td>Cost:</td>
+            <td><input type="text" th:field="*{cost}"/></td>
+        </tr>
+        <tr>
+            <td>Note:</td>
+            <td><input type="text" th:field="*{note}"/></td>
+        </tr>
+        <tr>
+            <td>Paylist :</td>
+            <td><input type="text" th:field="*{payList}"/></td>
+        </tr>
+        <tr>
+            <td>File picture</td>
+            <td><input type="file" th:field="*{file}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create Receipt"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

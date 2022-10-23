@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit receipt</title>
+</head>
+<body>
+<h1>Edit receipt</h1>
+<p>
+    <a href="/receipts">Receipt list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/edit-receipt}" th:object="${receiptForm}" method="post" novalidate="novalidate" enctype="multipart/form-data">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td>Cost:</td>
+            <td><input type="text" th:field="*{cost}"/></td>
+        </tr>
+        <tr>
+            <td>Note:</td>
+            <td><input type="text" th:field="*{note}"/></td>
+        </tr>
+        <tr>
+            <td>Pay List:</td>
+            <td><input type="text" th:field="*{payList}"/></td>
+        </tr>
+        <tr>
+            <td>File picture</td>
+            <td><input type="file" th:field="*{file}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update receipt"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
