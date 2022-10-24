@@ -49,7 +49,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/fileanh/**")
+        registry.addResourceHandler("/picture/**")
                 .addResourceLocations("file:" + fileUpload);
 
     }
@@ -115,7 +115,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/quanlyhoadonlo");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/quanlyhoadon");
         dataSource.setUsername("root");
         dataSource.setPassword("123456");
         return dataSource;

@@ -19,11 +19,11 @@
         </tr>
         <tr>
             <td>Cost:</td>
-            <td th:text="${receipt.cost}"></td>
+            <td th:text="${receipt.price}"></td>
         </tr>
         <tr>
             <td>Note:</td>
-            <td th:text="${receipt.note}"></td>
+            <td th:text="${receipt.description}"></td>
         </tr>
         <tr>
             <td>Pay List:</td>
@@ -31,7 +31,7 @@
         </tr>
         <tr>
             <td>Picture:</td>
-            <td><img width="100" height="100" th:src="@{'/fileanh/' + ${receipt.pictureName}}" alt=""></td>
+            <td><img width="100" height="100" th:src="@{'/picture/' + ${receipt.pictureName}}" alt=""></td>
         </tr>
         <tr>
             <td></td>

@@ -9,24 +9,24 @@ public class Receipt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String cost;
-    private String note;
+    private String price;
+    private String description;
     private String payList;
     private String pictureName;
 
-    public Receipt(Long id, String name, String cost, String note, String payList, String pictureName) {
+    public Receipt(Long id, String name, String price, String description, String payList, String pictureName) {
         this.id = id;
         this.name = name;
-        this.cost = cost;
-        this.note = note;
+        this.price = price;
+        this.description = description;
         this.payList = payList;
         this.pictureName = pictureName;
     }
 
-    public Receipt(String name, String cost, String note, String payList, String pictureName) {
+    public Receipt(String name, String price, String description, String payList, String pictureName) {
         this.name = name;
-        this.cost = cost;
-        this.note = note;
+        this.price = price;
+        this.description = description;
         this.payList = payList;
         this.pictureName = pictureName;
     }
@@ -50,20 +50,20 @@ public class Receipt {
         this.name = name;
     }
 
-    public String getCost() {
-        return cost;
+    public String getPrice() {
+        return price;
     }
 
-    public void setCost(String cost) {
-        this.cost = cost;
+    public void setPrice(String cost) {
+        this.price = cost;
     }
 
-    public String getNote() {
-        return note;
+    public String getDescription() {
+        return description;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setDescription(String note) {
+        this.description = note;
     }
 
     public String getPayList() {

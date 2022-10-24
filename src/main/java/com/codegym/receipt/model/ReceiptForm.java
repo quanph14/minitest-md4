@@ -5,24 +5,24 @@ import org.springframework.web.multipart.MultipartFile;
 public class ReceiptForm {
     private Long id;
     private String name;
-    private String cost;
-    private String note;
+    private String price;
+    private String description;
     private String payList;
     private MultipartFile file;
 
-    public ReceiptForm(Long id, String name, String cost, String note, String payList, MultipartFile file) {
+    public ReceiptForm(Long id, String name, String price, String description, String payList, MultipartFile file) {
         this.id = id;
         this.name = name;
-        this.cost = cost;
-        this.note = note;
+        this.price = price;
+        this.description = description;
         this.payList = payList;
         this.file = file;
     }
 
-    public ReceiptForm(String name, String cost, String note, String payList, MultipartFile file) {
+    public ReceiptForm(String name, String price, String description, String payList, MultipartFile file) {
         this.name = name;
-        this.cost = cost;
-        this.note = note;
+        this.price = price;
+        this.description = description;
         this.payList = payList;
         this.file = file;
     }
@@ -30,11 +30,11 @@ public class ReceiptForm {
     public ReceiptForm() {
     }
 
-    public ReceiptForm(Long id, String name, String cost, String note, String payList) {
+    public ReceiptForm(Long id, String name, String price, String description, String payList) {
         this.id = id;
         this.name = name;
-        this.cost = cost;
-        this.note = note;
+        this.price = price;
+        this.description = description;
         this.payList = payList;
     }
 
@@ -54,24 +54,24 @@ public class ReceiptForm {
         this.name = name;
     }
 
-    public String getCost() {
-        return cost;
+    public String getPrice() {
+        return price;
     }
 
     public ReceiptForm(Long id) {
         this.id = id;
     }
 
-    public void setCost(String cost) {
-        this.cost = cost;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public String getNote() {
-        return note;
+    public String getDescription() {
+        return description;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getPayList() {

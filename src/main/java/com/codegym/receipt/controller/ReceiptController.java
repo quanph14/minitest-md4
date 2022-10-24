@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.swing.plaf.multi.MultiListUI;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -46,7 +45,7 @@ public class ReceiptController {
             }catch (IOException ex){
                 ex.printStackTrace();
             }
-            Receipt receipt = new Receipt(receiptForm.getName(),receiptForm.getCost(),receiptForm.getNote(),receiptForm.getPayList(),pictureName);
+            Receipt receipt = new Receipt(receiptForm.getName(),receiptForm.getPrice(),receiptForm.getDescription(),receiptForm.getPayList(),pictureName);
             receiptService.save(receipt);
             modelAndView = new ModelAndView("/receipt/create");
             modelAndView.addObject("receiptForm", new ReceiptForm());
@@ -70,7 +69,7 @@ public class ReceiptController {
     public ModelAndView showEditForm(@PathVariable Long id) {
         Receipt receipt = receiptService.findById(id);
         if (receipt != null) {
-            ReceiptForm receiptForm = new ReceiptForm(receipt.getId(),receipt.getName(),receipt.getCost(),receipt.getNote(),receipt.getPayList());
+            ReceiptForm receiptForm = new ReceiptForm(receipt.getId(),receipt.getName(),receipt.getPrice(),receipt.getDescription(),receipt.getPayList());
             ModelAndView modelAndView = new ModelAndView("/receipt/edit");
             modelAndView.addObject("receiptForm", receiptForm);
             return modelAndView;
@@ -91,7 +90,7 @@ public class ReceiptController {
             }catch (IOException ex){
                 ex.printStackTrace();
             }
-            Receipt receipt = new Receipt(receiptForm.getId(),receiptForm.getName(),receiptForm.getCost(),receiptForm.getNote(),receiptForm.getPayList(),pictureName);
+            Receipt receipt = new Receipt(receiptForm.getId(),receiptForm.getName(),receiptForm.getPrice(),receiptForm.getDescription(),receiptForm.getPayList(),pictureName);
             receiptService.save(receipt);
             modelAndView = new ModelAndView("/receipt/edit");
             modelAndView.addObject("receiptForm", new ReceiptForm());
